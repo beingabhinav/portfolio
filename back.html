@@ -118,6 +118,174 @@
 
   .hero-content { position: relative; max-width: 760px; }
 
+  .hero-runner {
+    width: 11rem;
+    margin: 0 auto 1.35rem;
+    opacity: 0.92;
+    filter: drop-shadow(0 0 24px rgba(124, 110, 245, 0.18));
+  }
+
+  .wheel-and-hamster {
+    --dur: 1s;
+    position: relative;
+    width: 11rem;
+    height: 11rem;
+    font-size: 14px;
+  }
+
+  .wheel,
+  .hamster,
+  .hamster div,
+  .spoke {
+    position: absolute;
+  }
+
+  .wheel,
+  .spoke {
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wheel {
+    background:
+      radial-gradient(100% 100% at center, hsla(0,0%,60%,0) 47.8%, rgba(136, 136, 168, 0.28) 48%),
+      linear-gradient(rgba(124, 110, 245, 0.1), rgba(124, 110, 245, 0.03));
+    box-shadow: 0 0 0 0.18em rgba(124, 110, 245, 0.32) inset;
+    z-index: 2;
+  }
+
+  .hamster {
+    animation: hamster var(--dur) ease-in-out infinite;
+    top: 50%;
+    left: calc(50% - 3.5rem);
+    width: 7rem;
+    height: 3.75rem;
+    transform: rotate(4deg) translate(-0.8rem, 1.85rem);
+    transform-origin: 50% 0;
+    z-index: 1;
+  }
+
+  .hamster__body {
+    animation: hamsterBody var(--dur) ease-in-out infinite;
+    background: hsl(30,90%,90%);
+    border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+    box-shadow: 0 -0.25rem 0 hsl(30,90%,80%) inset, 0 0.75rem 0 hsl(30,90%,90%) inset;
+    top: 0.25rem;
+    left: 1.35rem;
+    width: 4.5rem;
+    height: 3rem;
+    transform-origin: 17% 50%;
+  }
+
+  .hamster__head {
+    animation: hamsterHead var(--dur) ease-in-out infinite;
+    background: hsl(30,90%,90%);
+    border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+    box-shadow: 0 -0.25rem 0 hsl(30,90%,80%) inset;
+    top: 0;
+    left: -1.65rem;
+    width: 2.75rem;
+    height: 2.5rem;
+    transform-origin: 100% 50%;
+  }
+
+  .hamster__ear {
+    animation: hamsterEar var(--dur) ease-in-out infinite;
+    background: hsl(0,90%,85%);
+    border-radius: 50%;
+    box-shadow: -0.18rem 0 hsl(30,90%,55%) inset;
+    top: -0.25rem;
+    right: -0.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    transform-origin: 50% 75%;
+  }
+
+  .hamster__eye {
+    animation: hamsterEye var(--dur) linear infinite;
+    background-color: hsl(0,0%,0%);
+    border-radius: 50%;
+    top: 0.75rem;
+    left: 0.35rem;
+    width: 0.32rem;
+    height: 0.32rem;
+  }
+
+  .hamster__nose {
+    background: hsl(0,90%,75%);
+    border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+    top: 1.25rem;
+    left: 0;
+    width: 0.45rem;
+    height: 0.28rem;
+  }
+
+  .hamster__limb--fr,
+  .hamster__limb--fl {
+    clip-path: polygon(0 0, 100% 0, 70% 80%, 10% 100%);
+    top: 2rem;
+    left: 0.5rem;
+    width: 1rem;
+    height: 1.5rem;
+    transform-origin: 50% 0;
+  }
+
+  .hamster__limb--fr {
+    animation: hamsterFRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,80%) 80%, hsl(0,90%,75%) 80%);
+  }
+
+  .hamster__limb--fl {
+    animation: hamsterFLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,90%) 80%, hsl(0,90%,85%) 80%);
+    transform: rotate(15deg);
+  }
+
+  .hamster__limb--br,
+  .hamster__limb--bl {
+    border-radius: 0.75rem 0.75rem 0 0;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%, 40% 90%, 0 30%);
+    top: 2rem;
+    left: 3.1rem;
+    width: 1.35rem;
+    height: 1.6rem;
+    transform-origin: 50% 30%;
+  }
+
+  .hamster__limb--br {
+    animation: hamsterBRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,80%) 90%, hsl(0,90%,75%) 90%);
+  }
+
+  .hamster__limb--bl {
+    animation: hamsterBLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30,90%,90%) 90%, hsl(0,90%,85%) 90%);
+  }
+
+  .hamster__tail {
+    animation: hamsterTail var(--dur) linear infinite;
+    background: hsl(0,90%,85%);
+    border-radius: 0.25rem 50% 50% 0.25rem;
+    box-shadow: 0 -0.2rem 0 hsl(0,90%,75%) inset;
+    top: 1.45rem;
+    right: -0.55rem;
+    width: 0.9rem;
+    height: 0.45rem;
+    transform: rotate(30deg);
+    transform-origin: 0.25rem 0.25rem;
+  }
+
+  .spoke {
+    animation: spoke var(--dur) linear infinite;
+    background:
+      radial-gradient(100% 100% at center, rgba(124, 110, 245, 0.55) 4.8%, transparent 5%),
+      linear-gradient(transparent 46.9%, rgba(136, 136, 168, 0.38) 47% 52.9%, transparent 53%) 50% 50% / 99% 99% no-repeat;
+    z-index: 2;
+  }
+
   .hero-tag {
     display: inline-block;
     font-family: var(--mono);
@@ -200,6 +368,62 @@
   }
 
   @keyframes scrollDot { 0%,100%{opacity:0.3;transform:scaleY(0.5)} 50%{opacity:1;transform:scaleY(1)} }
+
+  @keyframes hamster {
+    from, to { transform: rotate(4deg) translate(-0.8rem, 1.85rem); }
+    50% { transform: rotate(0) translate(-0.8rem, 1.85rem); }
+  }
+
+  @keyframes hamsterBody {
+    from, to { transform: rotate(0); }
+    25%, 50% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+  }
+
+  @keyframes hamsterHead {
+    from, 25%, 50%, 75%, to { transform: rotate(0); }
+    12.5%, 37.5%, 62.5%, 87.5% { transform: rotate(8deg); }
+  }
+
+  @keyframes hamsterEar {
+    from, 25%, 50%, 75%, to { transform: rotate(0); }
+    12.5%, 37.5%, 62.5%, 87.5% { transform: rotate(12deg); }
+  }
+
+  @keyframes hamsterEye {
+    from, 90%, to { transform: scaleY(1); }
+    95% { transform: scaleY(0); }
+  }
+
+  @keyframes hamsterFRLimb {
+    from, 25%, 50%, 75%, to { transform: rotate(50deg) translateZ(0); }
+    12.5%, 37.5%, 62.5%, 87.5% { transform: rotate(-30deg) translateZ(0); }
+  }
+
+  @keyframes hamsterFLLimb {
+    from, 25%, 50%, 75%, to { transform: rotate(-30deg); }
+    12.5%, 37.5%, 62.5%, 87.5% { transform: rotate(50deg); }
+  }
+
+  @keyframes hamsterBRLimb {
+    from, 25%, 50%, 75%, to { transform: rotate(-60deg) translateZ(0); }
+    12.5%, 37.5%, 62.5%, 87.5% { transform: rotate(20deg) translateZ(0); }
+  }
+
+  @keyframes hamsterBLLimb {
+    from, 25%, 50%, 75%, to { transform: rotate(20deg); }
+    12.5%, 37.5%, 62.5%, 87.5% { transform: rotate(-60deg); }
+  }
+
+  @keyframes hamsterTail {
+    from, 25%, 50%, 75%, to { transform: rotate(30deg) translateZ(0); }
+    12.5%, 37.5%, 62.5%, 87.5% { transform: rotate(10deg) translateZ(0); }
+  }
+
+  @keyframes spoke {
+    from { transform: rotate(0); }
+    to { transform: rotate(-1turn); }
+  }
 
   /* ── Section shared ── */
   section { padding: 6rem 1.5rem; }
@@ -1390,6 +1614,27 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
+    <div class="hero-runner">
+      <!-- From Uiverse.io by Nawsome -->
+      <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+        <div class="wheel"></div>
+        <div class="hamster">
+          <div class="hamster__body">
+            <div class="hamster__head">
+              <div class="hamster__ear"></div>
+              <div class="hamster__eye"></div>
+              <div class="hamster__nose"></div>
+            </div>
+            <div class="hamster__limb hamster__limb--fr"></div>
+            <div class="hamster__limb hamster__limb--fl"></div>
+            <div class="hamster__limb hamster__limb--br"></div>
+            <div class="hamster__limb hamster__limb--bl"></div>
+            <div class="hamster__tail"></div>
+          </div>
+        </div>
+        <div class="spoke"></div>
+      </div>
+    </div>
     <div class="hero-tag">Open to Opportunities</div>
     <h1 class="hero-name">Crafting Digital<br><span class="accent">Excellence</span></h1>
     <p class="hero-title">Frontend Developer building exceptional web experiences for innovative companies</p>
@@ -1409,6 +1654,27 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
+    <div class="hero-runner">
+      <!-- From Uiverse.io by Nawsome -->
+      <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+        <div class="wheel"></div>
+        <div class="hamster">
+          <div class="hamster__body">
+            <div class="hamster__head">
+              <div class="hamster__ear"></div>
+              <div class="hamster__eye"></div>
+              <div class="hamster__nose"></div>
+            </div>
+            <div class="hamster__limb hamster__limb--fr"></div>
+            <div class="hamster__limb hamster__limb--fl"></div>
+            <div class="hamster__limb hamster__limb--br"></div>
+            <div class="hamster__limb hamster__limb--bl"></div>
+            <div class="hamster__tail"></div>
+          </div>
+        </div>
+        <div class="spoke"></div>
+      </div>
+    </div>
     <div class="hero-tag">Creative Mind at Work</div>
     <h1 class="hero-name">Code Meets<br><span class="accent">Creativity</span></h1>
     <p class="hero-title">UI Designer & Developer crafting memorable digital experiences for brands that matter</p>
@@ -1428,6 +1694,27 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
+    <div class="hero-runner">
+      <!-- From Uiverse.io by Nawsome -->
+      <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+        <div class="wheel"></div>
+        <div class="hamster">
+          <div class="hamster__body">
+            <div class="hamster__head">
+              <div class="hamster__ear"></div>
+              <div class="hamster__eye"></div>
+              <div class="hamster__nose"></div>
+            </div>
+            <div class="hamster__limb hamster__limb--fr"></div>
+            <div class="hamster__limb hamster__limb--fl"></div>
+            <div class="hamster__limb hamster__limb--br"></div>
+            <div class="hamster__limb hamster__limb--bl"></div>
+            <div class="hamster__tail"></div>
+          </div>
+        </div>
+        <div class="spoke"></div>
+      </div>
+    </div>
     <div class="hero-tag">Focused on Quality</div>
     <h1 class="hero-name">Clean Code.<br><span class="accent">Better Web.</span></h1>
     <p class="hero-title">Frontend Developer focused on performance and user experience</p>
